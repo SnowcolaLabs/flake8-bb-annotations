@@ -46,6 +46,8 @@ def create_or_update_report(url, annotations, headers):
 
 def create_or_update_annotations(url, annotations, headers):
     res = requests.post(url=url+"/annotations", json=annotations, headers=headers)
+    print(res.status_code)
+    print(res.body)
     return res
 
 def categorize(error_code):
