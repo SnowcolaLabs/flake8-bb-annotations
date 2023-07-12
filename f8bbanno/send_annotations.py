@@ -71,7 +71,7 @@ def parse_violation(violation, id):
     err = ":".join(violation_parts[3:])
     error_info = err.strip().split(" ")
     error_code = error_info[0]
-    error_txt = " ".join(error_info[1:])
+    error_txt = err.strip()
     sev, a_type = categorize(error_code)
     return {
         "external_id": "{report}-{id:03}".format(report=REPORT_ID, id=id),
