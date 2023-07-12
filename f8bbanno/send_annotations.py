@@ -66,7 +66,9 @@ def categorize(error_code):
 
 
 def parse_violation(violation, id):
-    f, line, col, err = violation.split(":")
+    violation_parts = violation.split(":")
+    f, line, col = violation_parts[:3]
+    err = ":".join(violation_parts[3:])
     error_info = err.strip().split(" ")
     error_code = error_info[0]
     error_txt = " ".join(error_info[1:])
